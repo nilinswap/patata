@@ -4,20 +4,7 @@
 	<title>Circles</title>
 	<link rel="stylesheet" type="text/css" href="css/circle.css">
 	<script type="text/javascript" src="js/lib/paper-full.min.js"> </script>
-	<script type="text/paperscript" canvas="myCanvas">
-		
-		function onKeyDown(event){
-			maxPoint = new Point(view.size.width, view.size.height);
-			console.log(maxPoint)
-			randomPoint = Point.random();
-			centre = (randomPoint)*maxPoint;
-			console.log(randomPoint, maxPoint, centre)
-			new Path.Circle(centre, 10).fillColor = "skyblue";
-			
-		}
-
-
-	</script>
+	<script type="text/paperscript" canvas="myCanvas" src="js/circle.js"></script>
 
 </head>
 <body>

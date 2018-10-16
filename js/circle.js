@@ -1,7 +1,21 @@
+circles = []
+function onKeyDown(event){
+			maxPoint = new Point(view.size.width, view.size.height);
+			//console.log(maxPoint)
+			randomPoint = Point.random();
+			centre = (randomPoint)*maxPoint;
+			//console.log(randomPoint, maxPoint, centre)
+			newCircle = new Path.Circle(centre, 500);
+			newCircle.fillColor = "skyblue";
 
-for( var x = 0; x < 10; x++){
-	for( var y = 0; y < 10; y++){
-		var cir = new Path.Circle(new Point(x*50, y*50), 25);
-		cir.fillColor = "red";
-	}
+			circles.push(newCircle);
+			
+		}
+
+function onFrame(event){
+
+	circles.forEach(function(circle, index){
+		circle.fillColor.hue += 1;
+		circle.scale(.9);
+	});
 }

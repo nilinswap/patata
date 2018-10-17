@@ -1,21 +1,18 @@
-circles = []
-function onKeyDown(event){
-			maxPoint = new Point(view.size.width, view.size.height);
-			//console.log(maxPoint)
-			randomPoint = Point.random();
-			centre = (randomPoint)*maxPoint;
-			//console.log(randomPoint, maxPoint, centre)
-			newCircle = new Path.Circle(centre, 500);
-			newCircle.fillColor = "skyblue";
-
-			circles.push(newCircle);
-			
-		}
-
-function onFrame(event){
-
-	circles.forEach(function(circle, index){
-		circle.fillColor.hue += 1;
-		circle.scale(.9);
-	});
+console.log("connected");
+// Check for the various File API support.
+if (window.File && window.FileReader && window.FileList && window.Blob) {
+  // Great success! All the File APIs are supported.
+} else {
+  alert('The File APIs are not fully supported in this browser.');
 }
+
+var dirFile = ".";
+var file = new File([""],dirFile);
+file.open("r");
+var str = "";
+while (!file.eof) {
+	// read each line of text
+	str += file.readln() + "\n";
+}
+file.close();
+console.log(str);

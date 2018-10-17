@@ -179,7 +179,9 @@ function onFrame(event){
 	});
 }
 setInterval(function(){
-	old_cir = circles.shift();
-	console.log(circles.length);
+	if( circles.length){
+		old_cir = circles.shift();
+	}
+	//console.log(circles.length);
 	old_cir.remove();
 }, 1000)

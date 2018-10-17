@@ -178,3 +178,8 @@ function onFrame(event){
 		circle.scale(.9);
 	});
 }
+setInterval(function(){
+	old_cir = circles.shift();
+	console.log(circles.length);
+	old_cir.remove();
+}, 1000)
